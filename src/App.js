@@ -1,11 +1,15 @@
 import './App.css';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Nav from './Components/NavBar/Nav/Nav';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
+    <Router>
       < Nav />
-    </div>
+      <ItemListContainer 
+      welcomeMessage = "Bienvenido"/>
+    </Router>
   );
 }
 
