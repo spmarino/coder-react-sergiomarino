@@ -1,5 +1,5 @@
 import './App.css';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import Item from './Components/Item/Item';
 import Nav from './Components/NavBar/Nav/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -15,8 +15,8 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
         </Switch>
-      <ItemListContainer 
-      welcomeMessage = "Bienvenido"/>
+        <Item />
+        
     </Router>
   );
 }
