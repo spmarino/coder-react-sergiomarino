@@ -3,6 +3,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from '../NavbarElements'
 
 
+
 const nav = () => {
     return (
         <>
@@ -10,18 +11,18 @@ const nav = () => {
                 <NavLink to='/'>
                     <h1>Logo</h1>
                 </NavLink>
-                <Bars />
+                <Bars/>
                 <NavMenu>
-                    <NavLink to="/about" activeStyle>
+                    <NavLink to="/about" >
                         about
                     </NavLink>
-                    <NavLink to="/services" activeStyle>
+                    <NavLink to="/services" >
                         services
                     </NavLink>
-                    <NavLink to="/contact-us" activeStyle>
+                    <NavLink to="/contact-us" >
                         Contact Us
                     </NavLink>
-                    <NavLink to="/sign-up" activeStyle>
+                    <NavLink to="/sign-up" >
                         Sign Up
                     </NavLink>
                     <CartWidget />

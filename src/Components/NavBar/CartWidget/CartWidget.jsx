@@ -6,6 +6,7 @@ function CartWidget() {
     return (
         <>
             <FaCartPlus color = "#fff"/>
+            
         </>
     )
 }
