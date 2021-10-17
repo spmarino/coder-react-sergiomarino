@@ -1,11 +1,16 @@
 
 import React from 'react'
+import ItemList from '../ItemList/ItemList'
 
-function ItemListContainer({welcomeMessage}) {
+function ItemListContainer() {
+
+ 
+
+
     return (
-        <>
-          <h2 style={{textAlign:"center"}}>{welcomeMessage}</h2>  
-        </>
+        <div>
+          <ItemList />
+        </div>
     )
 }
 

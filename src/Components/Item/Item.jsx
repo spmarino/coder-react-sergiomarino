@@ -2,12 +2,14 @@ import React from 'react'
 import ImageItem from '../../images/blue.png'
 import Counter from '../Counter/Counter'
 
-const Item = () => {
+const Item = ({ProductName, Stock, Id, Category }) => {
     return (
         <div style={{textAlign: "center"}}>
+            <h4>Id {Id}</h4>
+            <h2>{ProductName}</h2>
             <img style ={{weight:"150px", height: "300px"}}src={ImageItem} alt="imageItem" />
-            <h2>Cantidad 10</h2>
-            <Counter stock={10}/>
+            <h5>Stock {Stock}</h5>
+            <Counter Stock={Stock}/>
         </div>
     )
 }
