@@ -1,10 +1,10 @@
 import React from 'react'
+import Charaters from '../Components/Characters/Charaters'
 
 const Home = () => {
     return (
-        <div style ={{display: 'flex', justifyContent: 'center',
-        alignItems:'center', heihgt:'90vh'}}>
-            <h1>Home</h1>
+        <div>
+           <Charaters />
         </div>
     )
 }
