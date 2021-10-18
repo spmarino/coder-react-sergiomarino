@@ -13,8 +13,8 @@ const nav = () => {
                 </NavLink>
                 <Bars/>
                 <NavMenu>
-                    <NavLink to="/about" >
-                        about
+                    <NavLink to="/Categories" >
+                        Categories
                     </NavLink>
                     <NavLink to="/services" >
                         services

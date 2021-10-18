@@ -10,10 +10,11 @@ const {image, name, gender, species, status} = Item
          <img src={image} alt="" />
         <h3>{name}</h3>
         <ul>
-            <li>{gender}</li>
-            <li>{species}</li>
-            <li>{status}</li>
-            <li>Stock 7</li>
+            <li>Gender: {gender}</li>
+            <li>Specie: {species}</li>
+            <li>Status: {status}</li>
+            <li>Stock:  7</li>
+            <li>Price: $500</li>
             
         </ul>
 

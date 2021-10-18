@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 /*Routes*/
 import Home from './pages/Home';
-import About from './pages/About';
+import Categories from './pages/Categories';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemCategory from './Components/ItemCategory/ItemCategory'
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
 
-        <Route path="/about" exact component={About} />
+        <Route path="/categories" exact component={Categories} />
 
-        <Route path="/character/:id" exact component={ItemDetailContainer} />
+        <Route path="/item/:id" exact component={ItemDetailContainer} />
+
+        <Route path="/category/:id" exact component={ItemCategory} />
       </Switch>
         
    

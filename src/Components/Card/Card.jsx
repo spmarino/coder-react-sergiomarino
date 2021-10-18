@@ -10,7 +10,7 @@ const {image, name, gender, species, status, location, id} = character
         <div>
            <img src={image} alt={name} />
            <div>
-               <Link to ={`/character/${id}`}>{name}</Link>
+               <Link to ={`/item/${id}`}>{name}</Link>
                <ul>
                    <li><b>Genre:</b> {gender}</li>
                    <li><b>Species</b> {species}</li>
