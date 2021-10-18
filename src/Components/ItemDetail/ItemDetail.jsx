@@ -1,22 +1,25 @@
 import React from 'react'
+import Counter from '../Counter/Counter'
 
-const ItemDetail = ({character}) => {
+const ItemDetail = ({Item}) => {
 
-const {image, name, gender, species, status, location} = character
+const {image, name, gender, species, status} = Item
 
     return (
-        <div>
-           <img src={image} alt={name} />
-           <div>
-               <h3>{name}</h3>
-               <ul>
-                   <li style = {{color:"red"}}><b>Genre:</b> {gender}</li>
-                   <li><b>Species</b> {species}</li>
-                   <li><b>Status:</b> {status}</li>
-                   
-               </ul>
+        <div style ={{textAlign:"center"}}>
+         <img src={image} alt="" />
+        <h3>{name}</h3>
+        <ul>
+            <li>{gender}</li>
+            <li>{species}</li>
+            <li>{status}</li>
+            <li>Stock 7</li>
+            
+        </ul>
 
-           </div>
+        <Counter Stock ={7}/>
+        <button>Add to Cart</button>
+             
         </div>
     )
 }

@@ -1,44 +1,55 @@
-import {React, useEffect, useState} from "react";
-import Layout from "../Layout/Layout";
-import { api } from "../Utils/Api";
-import ItemDetail from '../ItemDetail/ItemDetail'
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Layout from "../Layout/Layout";
+import Loader from 'react-loader-spinner'
 
-function ItemDetailCointainer() {
-    
-const { ItemId } = useParams()
 
-const endpoint = `/character/${ItemId}`
+const ItemDetailContainer = () => {
 
-console.log(endpoint)
+const {id} = useParams()
+const endpoint = `https://rickandmortyapi.com/api/character/${id}`
 
-const [character, setCharacter] = useState ([])
-
+const [Item, setItem] = useState("")
 const [loading, setLoading] = useState(true)
 
+const getItem = async () => {
 
-useEffect(() =>{
-api.get(endpoint)
-.then(response =>{
-    //console.log(response)
-    const {data} = response
-setCharacter(data.results)
-})
+try {
+
+    const resp = await axios.get (endpoint)
+    setItem(resp.data)
+}catch (error) {
+    console.log(error)
+}   
+}
+
+useEffect(()=> {
+getItem()
 
 setTimeout(() => {
     setLoading(false)
-},3000)
-}, [endpoint])
+},2000)},
+ [])
 
 
-     return (
-        <Layout style ={{display : "Center"}}>
+return(
+    <Layout>
+        {loading ? <Loader
+type="Puff"
+color="#00BFFF"
+height={100}
+width = {100}
+timeout={3000} /> :
 
-<ItemDetail character/>
+<ItemDetail Item= {Item} />}
+
+    </Layout>
     
-   
-        </Layout>
-    )
-}
+        
+        
+)
+};
 
-export default ItemDetailCointainer
+export default ItemDetailContainer;
