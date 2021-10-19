@@ -33,7 +33,8 @@ setTimeout(() => {
 
 
     return (
-        <Layout style ={{display : "Center"}}>
+        
+        <Layout id = {id}>
 {loading ? <Loader
 type="Puff"
 color="#00BFFF"

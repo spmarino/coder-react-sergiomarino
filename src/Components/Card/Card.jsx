@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {DivCard, Img, NavLink, List} from './CardStyle'
 
 
 const Card = ({character}) => {
@@ -7,19 +7,20 @@ const Card = ({character}) => {
 const {image, name, gender, species, status, location, id} = character
 
     return (
-        <div>
-           <img src={image} alt={name} />
+        <DivCard>
+           <Img src={image} alt={name} />
            <div>
-               <Link to ={`/item/${id}`}>{name}</Link>
+               
+               <NavLink to ={`/item/${id}`}>{name}</NavLink>
                <ul>
-                   <li><b>Genre:</b> {gender}</li>
-                   <li><b>Species</b> {species}</li>
-                   <li><b>Status:</b> {status}</li>
-                   <li><b>Location:</b> {location.name}</li>
+                   <List><b>Genre:</b> {gender}</List>
+                   <List><b>Species:</b> {species}</List>
+                   <List><b>Status:</b> {status}</List>
+                   <List><b>Location:</b> {location.name}</List>
                </ul>
 
            </div>
-        </div>
+        </DivCard>
     )
 }
 
