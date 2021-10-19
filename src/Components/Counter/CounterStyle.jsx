@@ -21,9 +21,13 @@ border: solid 2px #256ce1}
 
 export const Nav = styled.div `
 display: flex;
-color: #256ce1;
+color: white;
 justify-content: center;
 margin: 10px 0;
 
 
+`
+
+export const H2 = styled.h2 `
+color: #98d40d;
 `

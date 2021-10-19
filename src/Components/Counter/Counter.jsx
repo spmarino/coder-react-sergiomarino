@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import {Button, Nav} from './CounterStyle'
+import {Button, Nav, H2} from './CounterStyle'
 
 
 const Counter = ({Stock}) => {
@@ -16,7 +16,7 @@ const Counter = ({Stock}) => {
             
             <Nav>
 
-            <Button onClick={subtract}>  -  </Button><h2>  {Count}  </h2><Button onClick ={add}>  +  </Button>
+            <Button onClick={subtract}>  -  </Button><H2>  {Count}  </H2><Button onClick ={add}>  +  </Button>
               
                 
             </Nav>

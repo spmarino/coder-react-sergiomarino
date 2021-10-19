@@ -1,16 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import { DivContainer, Title, Ul, NavLink } from './PageStyle'
 
 const Categories = () => {
     return (
-        <div>
-            <h1>Categories</h1>
-            <br />
-            <ul>
-                <p><Link to ={`/category/male`}>Gender: Male</Link></p>
-                <p><Link to ={`/category/female`}>Gender: Female</Link></p>
-            </ul>
-        </div>
+        <DivContainer>
+
+            <Title>Categories</Title>
+           
+            
+                <NavLink to ={`/category/male`}>Gender: Male</NavLink>
+                <NavLink to ={`/category/female`}>Gender: Female</NavLink>
+            
+        </DivContainer>
     )
 }
 
