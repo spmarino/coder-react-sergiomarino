@@ -1,6 +1,7 @@
 import {React, useState} from 'react'
 import Counter from '../Counter/Counter'
-import{DivCard, Img, List, DivContainer,Title, Button, ButtonCancel} from './ItemDetailStyle'
+import{DivCard, Img, List, DivContainer,Title, Button} from './ItemDetailStyle'
+
 
 
 const ItemDetail = ({Item}) => {
@@ -23,12 +24,10 @@ const [show, setShow] = useState(true)
             <li>Price: $500</li>
             
         </List>
-        
-{show? <Counter Stock ={7}/> : null}
-        
-{show? <Button onClick={() =>setShow(!show)}> Add to Cart </Button>: 
 
-<ButtonCancel onClick={() =>setShow(!show)}> Cancel </ButtonCancel>}
+<Counter Stock ={7}/> 
+        
+
         
         
              </DivContainer>
