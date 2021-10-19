@@ -1,7 +1,7 @@
 import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from '../NavbarElements'
-
+import Logo from '../../../images/Logo.png'
 
 
 const nav = () => {
@@ -9,8 +9,8 @@ const nav = () => {
         <>
             <Nav>
                 <NavLink to='/'>
-                    <h1>Logo</h1>
-                </NavLink>
+<img src={Logo} alt="" />                
+</NavLink>
                 <Bars/>
                 <NavMenu>
                     <NavLink to="/Categories" >

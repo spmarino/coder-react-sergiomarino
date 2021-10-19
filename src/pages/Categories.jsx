@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DivContainer, Title, Ul, NavLink } from './PageStyle'
+import { DivContainer, Title, NavLink } from './PageStyle'
 
 const Categories = () => {
     return (
