@@ -1,14 +1,21 @@
-import {React, useState} from 'react'
+import {React} from 'react'
 import Counter from '../Counter/Counter'
-import{DivCard, Img, List, DivContainer,Title, Button} from './ItemDetailStyle'
+import{DivCard, Img, List, DivContainer,Title} from './ItemDetailStyle'
+import {UseCartContext} from '../Context/CartContext'
 
 
 
 const ItemDetail = ({Item}) => {
-
 const {image, name, gender, species, status} = Item
 
-const [show, setShow] = useState(true)
+
+
+const {AddItem} = UseCartContext()
+
+
+const OnAdd =(Quantity)=>{
+    AddItem({Item: Item, Quantity: Quantity})
+}
 
     return (
         <DivCard>
@@ -25,7 +32,7 @@ const [show, setShow] = useState(true)
             
         </List>
 
-<Counter Stock ={7}/> 
+<Counter Initial={1} Stock ={7} OnAdd={OnAdd}/> 
         
 
         
