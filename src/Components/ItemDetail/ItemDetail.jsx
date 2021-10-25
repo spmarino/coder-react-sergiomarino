@@ -32,7 +32,7 @@ const OnAdd =(Quantity)=>{
             
         </List>
 
-<Counter Initial={1} Stock ={7} OnAdd={OnAdd}/> 
+<Counter Initial={1} Stock ={7} OnAdd={OnAdd} /> 
         
 
         

@@ -7,9 +7,18 @@ import {useState, React, createContext, useContext} from 'react'
 const CartContextProvider = ({children}) => {
 const [CartList, SetCartList] = useState([])
 
+
+
 const AddItem = (Item) =>{
 SetCartList([...CartList, Item])
 }
+
+
+const DelItem = (id) => {
+    const items = CartList.filter((item)=> item.Item.id !== id)
+    SetCartList(items)
+}
+
 
 const EmptyCart = () =>{
     SetCartList([])
@@ -19,7 +28,9 @@ const EmptyCart = () =>{
         <CartContext.Provider value= {{
             CartList,
             AddItem,
-            EmptyCart}}>
+            EmptyCart,
+            DelItem
+            }}>
             {children}
         </CartContext.Provider>
     )
