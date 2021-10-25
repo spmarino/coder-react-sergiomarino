@@ -1,6 +1,6 @@
 import React from 'react'
 import { UseCartContext } from "../Context/CartContext";
-import {DivItem, Img, DelButton} from "./CartItemStyle"
+import {DivItem, Img, DelButton, Titles} from "./CartItemStyle"
 
 const CartItem = ({Item, Quantity}) => {
     const{DelItem} = UseCartContext()
@@ -11,8 +11,8 @@ const CartItem = ({Item, Quantity}) => {
        
         <DivItem>
         <Img src={image} alt={name} />
-        <h2>{name}</h2>
-        <h2> {Quantity} Units</h2>
+        <Titles>{name}</Titles>
+        <Titles> {Quantity} Units</Titles>
         <DelButton onClick={() => DelItem(id)}>X</DelButton>
         {console.log(Item)}
         </DivItem>

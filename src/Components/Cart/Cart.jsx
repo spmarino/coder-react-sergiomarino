@@ -1,7 +1,7 @@
 import { UseCartContext } from "../Context/CartContext";
 import React from 'react'
 import CartItem from "../CartItem/CartItem";
-import { DivCart } from "./CartStyle";
+import { DivCart, Title, EmptyButton } from "./CartStyle";
 
 const Cart = () => {
     const{CartList, EmptyCart} = UseCartContext()
@@ -9,14 +9,14 @@ const Cart = () => {
 
     return (
         <div>
-            <h2>Carrito</h2>
+            <Title>Cart</Title>
             <DivCart>
             {CartList.map(item => <CartItem key={item.Item.id}
             Item ={item.Item} Quantity={item.Quantity}/>)
             }
             </DivCart>
        
-            <button onClick={EmptyCart}>Empty Cart</button>
+            <EmptyButton onClick={EmptyCart}>Empty Cart</EmptyButton>
 
             
             

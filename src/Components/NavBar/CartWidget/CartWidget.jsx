@@ -1,14 +1,15 @@
 import React from 'react'
 import { FaCartPlus } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 function CartWidget() {
     return (
-        <div style={{display:"flex"}}>
-            <p></p>
+        <Link to="/cart" style={{display:"flex"}}>
+           
             <FaCartPlus color = "#fff"/>
             
-        </div>
+        </Link>
     )
 }
 
