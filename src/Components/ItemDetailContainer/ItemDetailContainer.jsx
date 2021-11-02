@@ -1,32 +1,23 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Layout from "../Layout/Layout";
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
+import {getFirestore} from '../services/getFirebase'
 
 
 const ItemDetailContainer = () => {
-
+const db = getFirestore()
 const {id} = useParams()
-const endpoint = `https://rickandmortyapi.com/api/character/${id}`
 
 const [Item, setItem] = useState("")
 const [loading, setLoading] = useState(true)
 
-const getItem = async () => {
-
-try {
-
-    const resp = await axios.get (endpoint)
-    setItem(resp.data)
-}catch (error) {
-    console.log(error)
-}   
-}
 
 useEffect(()=> {
-getItem()
+db.collection('Items').doc(id).get()
+.then(resp => setItem({id: resp.id, ...resp.data()}))
+
 
 setTimeout(() => {
     setLoading(false)

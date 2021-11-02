@@ -8,11 +8,18 @@ const CartContextProvider = ({children}) => {
 const [CartList, SetCartList] = useState([])
 
 
-
 const AddItem = (Item) =>{
 SetCartList([...CartList, Item])
 }
 
+const IconCart = () => {
+return CartList.reduce( (acum, valor)=> acum + valor.Quantity, 0 )
+}
+
+
+const PriceTotal =() =>{
+    return CartList.reduce((acum, valor)=> (acum + (valor.Quantity * valor.Item.price)), 0)
+}
 
 const DelItem = (id) => {
     const items = CartList.filter((item)=> item.Item.id !== id)
@@ -29,7 +36,9 @@ const EmptyCart = () =>{
             CartList,
             AddItem,
             EmptyCart,
-            DelItem
+            DelItem,
+            IconCart,
+            PriceTotal
             }}>
             {children}
         </CartContext.Provider>

@@ -1,25 +1,27 @@
 import React from 'react'
-import {DivCard, Img, NavLink, List} from './CardStyle'
+import {DivCard, Img, NavLink, List, ImgContainer, DivList} from './CardStyle'
 
 
 const Card = ({character}) => {
 
-const {image, name, gender, species, status, location, id} = character
+const {image, name, stock, price, id} = character
 
     return (
         <DivCard>
-           <Img src={image} alt={name} />
-           <div>
+            <ImgContainer>
+            <Img src={image} alt={name} />
+            </ImgContainer>
+           
+           <DivList>
                
                <NavLink to ={`/item/${id}`}>{name}</NavLink>
                <ul>
-                   <List><b>Genre:</b> {gender}</List>
-                   <List><b>Species:</b> {species}</List>
-                   <List><b>Status:</b> {status}</List>
-                   <List><b>Location:</b> {location.name}</List>
+                   <List><b>Price:</b> {price}</List>
+                   <List><b>Stock:</b> {stock}</List>
+                   
                </ul>
 
-           </div>
+           </DivList>
         </DivCard>
     )
 }

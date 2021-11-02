@@ -7,10 +7,12 @@ width: 100%;
 padding: 2%;
 justify-content: center;
 `
-export const Title = styled.div `
+export const Title = styled.h2 `
 font-size: 2em;
-margin-top: 1%;
 text-align: center;
+width: 100%;
+color: #256ce1;
+
 `
 
 export const EmptyButton = styled.div `
@@ -30,4 +32,10 @@ padding: 10px;
     background: #fff;
     color: #e12525;
 border: solid 2px #e12525}
+`
+
+export const DivContainer = styled.div `
+text-align: center;
+padding: 30px;
+
 `

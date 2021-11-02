@@ -1,11 +1,12 @@
 import {React, useEffect, useState} from "react";
 import Layout from "../Layout/Layout";
-import { api } from "../Utils/Api";
 import Card from "../Card/Card";
 import Loader from 'react-loader-spinner'
-
+import {getFirestore} from '../services/getFirebase'
 
 function Charaters() {
+
+
 
 const endpoint = '/character';
 
@@ -15,12 +16,16 @@ const [loading, setLoading] = useState(true)
 
 
 useEffect(() =>{
-api.get(endpoint)
-.then(response =>{
-    //console.log(response)
-    const {data} = response
-setCharacters(data.results)
-})
+const db = getFirestore()
+
+db.collection('Items').get()
+/*db.collection('Items').doc().get()*/
+
+.then(resp =>
+    //console.log(resp)
+    //const {data} = response
+setCharacters(resp.docs.map(item =>({ id: item.id, ...item.data()})))
+)
 
 setTimeout(() => {
     setLoading(false)
@@ -36,7 +41,7 @@ color="#00BFFF"
 height={100}
 width = {100}
 timeout={3000} /> : 
-
+//console.log(characters)
 characters.map(character => <Card key ={character.id} 
     character ={character}/>)
     }

@@ -6,7 +6,7 @@ import {UseCartContext} from '../Context/CartContext'
 
 
 const ItemDetail = ({Item}) => {
-const {image, name, gender, species, status} = Item
+const {image, name, stock, description, price} = Item
 
 
 
@@ -24,15 +24,13 @@ const OnAdd =(Quantity)=>{
         <Title>{name}</Title>
 
         <List>
-            <li>Gender: {gender}</li>
-            <li>Specie: {species}</li>
-            <li>Status: {status}</li>
-            <li>Stock:  7</li>
-            <li>Price: $500</li>
+            <li>Description: {description}</li>
+            <li>Stock:  {stock}</li>
+            <li>Price: {price}</li>
             
         </List>
 
-<Counter Initial={1} Stock ={7} OnAdd={OnAdd} /> 
+<Counter Initial={1} Stock ={stock} OnAdd={OnAdd} /> 
         
 
         

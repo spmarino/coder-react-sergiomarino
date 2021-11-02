@@ -34,8 +34,8 @@ color: #98d40d;
 `
 
 
-export const ButtonCancel = styled.button `
-background-color: #e12525;
+export const ButtonCart = styled.button `
+background-color: #08a508;
 color: white;
 font-size: 1.5em;
 padding: 1px 15px;
@@ -48,7 +48,7 @@ margin: 20px;
 &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #e12525;
-border: solid 2px #e12525}
+    color: #08a508;
+border: solid 2px #08a508}
 
 `

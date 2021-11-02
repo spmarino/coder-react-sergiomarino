@@ -37,7 +37,19 @@ color:white;
 `
 export const Img = styled.img`
 width: 100%;
+max-height: 100%;
 border-radius: 20px;
+margin: auto;
+`
+export const ImgContainer = styled.div `
+background-color: white;
+width: 100%;
+display: flex;
+justify-content: center;
+height: 70%;
+border-radius: 20px;
+flex-wrap: wrap;
+margin:auto;
 
 `
 
@@ -51,4 +63,8 @@ color: #98d40d;
 export const List = styled.ul `
 list-style: none;
 text-align: left;
+margin: auto; 
+`
+export const DivList = styled.div `
+padding:5%;
 `
