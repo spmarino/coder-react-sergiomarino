@@ -1,11 +1,12 @@
 import React from 'react'
-import {Nav,Title} from './LayoutStyle'
+import {Nav} from './LayoutStyle'
 
 
-const Layout = ({children, id}) => {
+const Layout = ({children}) => {
     return (
+
         <Nav>
-            {id?<Title>Gender: {id}</Title>:null}
+            
     {children}
         </Nav>
     )

@@ -16,26 +16,27 @@ const Cart = () => {
     <DivContainer>
       {loading ? (
         <Loader
-          type="Puff"
-          color="#00BFFF"
-          height={100}
-          width={100}
-          timeout={3000}
+        type="Audio"
+        color="#256ce1"
+        height={80}
+        width={80}
+        timeout={3000}
         />
       ) : (
         <div>
           <Title>Cart</Title>
           <DivCart>
-            {CartList.map((item) => (
+            {CartList.length<1 ?<h2>You have no items in your shopping cart</h2>:   <div>{CartList.map((item) => (
               <CartItem
                 key={item.Item.id}
                 Item={item.Item}
                 Quantity={item.Quantity}
               />
-            ))}
+            ))}</div>}
+         
           </DivCart>
           <EmptyButton onClick={EmptyCart}>Empty Cart</EmptyButton>
-          {PriceTotal()}
+          <h2>Total: {PriceTotal()} U$D</h2>
 
         </div>
       )}
