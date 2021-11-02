@@ -19,7 +19,8 @@ function Characters() {
         setCharacters(
           resp.docs.map((item) => ({ id: item.id, ...item.data() }))
         )
-      );
+      )
+      .catch((err) => console.log(err));
 
     setTimeout(() => {
       setLoading(false);

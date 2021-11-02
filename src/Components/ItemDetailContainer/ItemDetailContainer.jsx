@@ -16,7 +16,8 @@ const ItemDetailContainer = () => {
     db.collection("Items")
       .doc(id)
       .get()
-      .then((resp) => setItem({ id: resp.id, ...resp.data() }));
+      .then((resp) => setItem({ id: resp.id, ...resp.data() }))
+      .catch((err) => console.log(err));
 
     setTimeout(() => {
       setLoading(false);
@@ -27,11 +28,11 @@ const ItemDetailContainer = () => {
     <Layout>
       {loading ? (
         <Loader
-        type="Audio"
-        color="#256ce1"
-        height={80}
-        width={80}
-        timeout={3000}
+          type="Audio"
+          color="#256ce1"
+          height={80}
+          width={80}
+          timeout={3000}
         />
       ) : (
         <ItemDetail Item={Item} />
