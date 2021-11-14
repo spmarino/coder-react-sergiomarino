@@ -33,11 +33,12 @@ border-radius: 20px;
 export const DelButton = styled.button `
 background-color: #e12525;
 color: white;
-font-size: 2em;
+font-size: 1em;
 border-radius: 150%;
+border: 2px solid white;
 cursor: pointer;
-border: solid 2px white;
-width: 3%;
+width: 30px;
+height: 30px;
 margin: 1% 0;
 
 &:hover {

@@ -11,6 +11,8 @@ import Categories from './pages/Categories';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemCategory from './Components/ItemCategory/ItemCategory'
 import Cart from './Components/Cart/Cart';
+import ContactForm from './Components/Hooks/ContactForm';
+
 
 
 
@@ -32,6 +34,10 @@ function App() {
         <Route path="/category/:id" exact component={ItemCategory} />
 
         <Route path="/cart" exact component={Cart} />
+
+        <Route path="/form" exact component={ContactForm} />
+
+      
         
         
       </Switch>

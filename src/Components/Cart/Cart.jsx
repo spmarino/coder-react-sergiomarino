@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import CartItem from "../CartItem/CartItem";
 import { DivCart, Title, EmptyButton, DivContainer} from "./CartStyle";
 import Loader from "react-loader-spinner";
+import Form from "../Form/Form";
 
 const Cart = () => {
   const { CartList, EmptyCart, PriceTotal } = UseCartContext();
@@ -32,7 +33,8 @@ const Cart = () => {
                 Item={item.Item}
                 Quantity={item.Quantity}
               />
-            ))}</div>}
+            ))}
+            <Form/></div>}
          
           </DivCart>
           <EmptyButton onClick={EmptyCart}>Empty Cart</EmptyButton>
