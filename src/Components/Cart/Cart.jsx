@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import CartItem from "../CartItem/CartItem";
 import { DivCart, Title, EmptyButton, DivContainer} from "./CartStyle";
 import Loader from "react-loader-spinner";
-import Form from "../Form/Form";
+import ContactForm from '../Form/ContactForm'
 
 const Cart = () => {
   const { CartList, EmptyCart, PriceTotal } = UseCartContext();
@@ -26,20 +26,25 @@ const Cart = () => {
       ) : (
         <div>
           <Title>Cart</Title>
-          <DivCart>
-            {CartList.length<1 ?<h2>You have no items in your shopping cart</h2>:   <div>{CartList.map((item) => (
+          
+            {CartList.length<1 ?<h2>You have no items in your shopping cart</h2>:   
+            <div>
+            <DivCart>
+            <div>{CartList.map((item) => (
               <CartItem
                 key={item.Item.id}
                 Item={item.Item}
                 Quantity={item.Quantity}
               />
             ))}
-            <Form/></div>}
+            </div>
+            </DivCart>
+            <EmptyButton onClick={EmptyCart}>Empty Cart</EmptyButton>
+            <h2>Total: {PriceTotal()} U$D</h2>
+            <ContactForm/></div>}
          
-          </DivCart>
-          <EmptyButton onClick={EmptyCart}>Empty Cart</EmptyButton>
-          <h2>Total: {PriceTotal()} U$D</h2>
-
+          
+          
         </div>
       )}
 

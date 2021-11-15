@@ -1,37 +1,41 @@
-import { useForm } from "./useForm";
+import { useForm } from "../Hooks/useForm";
+import Loader from "react-loader-spinner";
+import {Form, Input, Button, Err, Title} from "./CFStyle.jsx"
+
 const initialForm = { name: "", email: "", phone: "", email2: "" };
 const validationsForm = (form) => {
   let errors = {};
+
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
   let regexPhone =
     /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
   if (!form.name.trim()) {
-    errors.name = "El campo nombre es requerido";
+    errors.name = "You must enter a name";
   } else if (!regexName.test(form.name.trim())) {
-    errors.name = "El campo nombre solo acepta letras y espacios en blanco";
+    errors.name = "The name field only accepts letters and blanks";
   }
 
   if (!form.email.trim()) {
-    errors.email = "El campo email es requerido";
+    errors.email = "You must enter an email address";
   } else if (!regexEmail.test(form.email.trim())) {
-    errors.email = "Debe ser un email valido";
+    errors.email = "It must be a valid email";
   }
 
   if (!form.email2.trim()) {
-    errors.email2 = "El campo email es requerido";
+    errors.email2 = "You must enter an email address";
   }
-  if (form.email !== form.email2) {
-    errors.email2 = "Las contraseñas deben coincidir";
+  else if (form.email !== form.email2) {
+    errors.email2 = "The emails must match";
   } else if (!regexEmail.test(form.email2.trim())) {
-    errors.email2 = "Debe ser un email valido";
+    errors.email2 = "It must be a valid email";
   }
 
   if (!form.phone.trim()) {
-    errors.phone2 = "El campo phone es requerido";
+    errors.phone = "you must enter a phone number";
   } else if (!regexPhone.test(form.phone.trim())) {
-    errors.phone = "Debe ser un telefono valido";
+    errors.phone = "You must enter a 10 digit number";
   }
 
   return errors;
@@ -42,7 +46,6 @@ const ContactForm = () => {
     form,
     errors,
     loading,
-    response,
     handleChange,
     handleBlur,
     handleSubmit,
@@ -50,53 +53,63 @@ const ContactForm = () => {
 
   return (
     <div>
-      <h2>Formulario de Contacto</h2>
+      <Title>Contact Information</Title>
 
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           name="name"
-          placeholder="Escribe tu nombre"
+          placeholder="Write your name"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.name}
           required
         />
-        {errors.name && <p>{errors.name}</p>}
-        <input
+        {errors.name && <Err>{errors.name}</Err>}
+        <Input
           type="email"
           name="email"
-          placeholder="Escribe tu email"
+          placeholder="Write your email"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.email}
           required
         />
-        {errors.name && <p>{errors.email}</p>}
+        {errors.email&& <Err>{errors.email}</Err>}
 
-        <input
+        <Input
           type="email"
           name="email2"
-          placeholder="Reingrese su email"
+          placeholder="Rewrite your email"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.email2}
           required
         />
-        {errors.name && <p>{errors.email2}</p>}
+        {errors.email2 && <Err>{errors.email2}</Err>}
 
-        <input
+        <Input
           type="phone"
           name="phone"
-          placeholder="Escribe tu telefono"
+          placeholder="Write your phone"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.phone}
           required
         />
-        {errors.name && <p>{errors.phone}</p>}
-        <input type="submit" value="Enviar" />
-      </form>
+        {errors.phone && <Err>{errors.phone}</Err>}
+        <Button type="submit" value="Enviar" />
+      </Form>
+      {loading && <Loader
+        type="Circles"
+        color="#256ce1"
+        height={80}
+        width={80}
+        timeout={3000}
+      
+        />}
+     
+       
     </div>
   );
 };
