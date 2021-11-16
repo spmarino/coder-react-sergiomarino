@@ -19,9 +19,17 @@ const ItemDetail = ({ Item }) => {
         <Title>{name}</Title>
 
         <List>
-          <li><span style ={{color:"#98d40d"}}>Description: </span>{description}</li>
-          <li><span style ={{color:"#98d40d"}}>Stock </span>{stock} unites</li>
-          <li><span style ={{color:"#98d40d"}}>Span: </span> {price} U$D</li>
+          <li>
+            <span style={{ color: "#98d40d" }}>Description: </span>
+            {description}
+          </li>
+          <li>
+            <span style={{ color: "#98d40d" }}>Stock </span>
+            {stock} unites
+          </li>
+          <li>
+            <span style={{ color: "#98d40d" }}>Span: </span> {price} U$D
+          </li>
         </List>
 
         <Counter Initial={1} Stock={stock} OnAdd={OnAdd} />

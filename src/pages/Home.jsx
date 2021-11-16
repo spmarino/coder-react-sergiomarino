@@ -1,12 +1,12 @@
-import React from 'react'
-import Charaters from '../Components/Characters/Charaters'
+import React from "react";
+import ItemList from "../Components/ItemList/ItemList";
 
 const Home = () => {
-    return (
-        <div>
-           <Charaters />
-        </div>
-    )
-}
+  return (
+    <div>
+      <ItemList />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

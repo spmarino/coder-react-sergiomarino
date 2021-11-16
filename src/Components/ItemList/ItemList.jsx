@@ -1,11 +1,11 @@
 import { React, useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
-import Card from "../Card/Card";
+import Item from "../Item/Item";
 import Loader from "react-loader-spinner";
 import { getFirestore } from "../services/getFirebase";
 
-function Characters() {
-  const [characters, setCharacters] = useState([]);
+function ItemList() {
+  const [items, setItems] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
@@ -16,9 +16,7 @@ function Characters() {
       .get()
 
       .then((resp) =>
-        setCharacters(
-          resp.docs.map((item) => ({ id: item.id, ...item.data() }))
-        )
+        setItems(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
       )
       .catch((err) => console.log(err));
 
@@ -38,12 +36,10 @@ function Characters() {
           timeout={3000}
         />
       ) : (
-        characters.map((character) => (
-          <Card key={character.id} character={character} />
-        ))
+        items.map((item) => <Item key={item.id} item={item} />)
       )}
     </Layout>
   );
 }
 
-export default Characters;
+export default ItemList;

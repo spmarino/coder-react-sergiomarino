@@ -1,15 +1,8 @@
-import React from 'react'
-import {Nav} from './LayoutStyle'
+import React from "react";
+import { Nav } from "./LayoutStyle";
 
+const Layout = ({ children }) => {
+  return <Nav>{children}</Nav>;
+};
 
-const Layout = ({children}) => {
-    return (
-
-        <Nav>
-            
-    {children}
-        </Nav>
-    )
-}
-
-export default Layout
+export default Layout;

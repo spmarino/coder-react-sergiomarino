@@ -6,13 +6,13 @@ import Loader from "react-loader-spinner";
 import { getFirestore } from "../services/getFirebase";
 
 const ItemDetailContainer = () => {
-  const db = getFirestore();
   const { id } = useParams();
-
   const [Item, setItem] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const db = getFirestore();
+
     db.collection("Items")
       .doc(id)
       .get()
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, []);
+  }, [id]);
 
   return (
     <Layout>

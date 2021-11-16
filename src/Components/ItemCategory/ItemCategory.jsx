@@ -1,50 +1,48 @@
-import {React, useEffect, useState} from "react";
+import { React, useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
-import Card from "../Card/Card";
-import Loader from 'react-loader-spinner';
+import Item from "../Item/Item";
+import Loader from "react-loader-spinner";
 import { useParams } from "react-router";
 import { getFirestore } from "../services/getFirebase";
 
-
 function ItemCategory() {
+  const { id } = useParams();
 
-   const {id} = useParams()
+  const [items, setItems] = useState([]);
 
-const [characters, setCharacters] = useState ([])
+  const [loading, setLoading] = useState(true);
 
-const [loading, setLoading] = useState(true)
-
-
-useEffect(() =>{
+  useEffect(() => {
     const db = getFirestore();
 
-    db.collection("Items").where('categoryId','==',+id)
+    db.collection("Items")
+      .where("categoryId", "==", +id)
       .get()
 
       .then((resp) =>
-        setCharacters(
-          resp.docs.map((item) => ({ id: item.id, ...item.data() }))
-        )
+        setItems(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
       );
 
-setTimeout(() => {
-    setLoading(false)
-},2000)
-},[id])
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [id]);
 
-
-    return (
-        
-        <Layout>
-{loading ? <Loader type="Audio" color="#256ce1" height={80} width={80}
-timeout={3000} /> : 
-
-characters.map(character => <Card key ={character.id} 
-    character ={character}/>)
-    }
-   
-        </Layout>
-    )
+  return (
+    <Layout>
+      {loading ? (
+        <Loader
+          type="Audio"
+          color="#256ce1"
+          height={80}
+          width={80}
+          timeout={3000}
+        />
+      ) : (
+        items.map((item) => <Item key={item.id} item={item} />)
+      )}
+    </Layout>
+  );
 }
 
-export default ItemCategory
+export default ItemCategory;

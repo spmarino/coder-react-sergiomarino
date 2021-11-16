@@ -54,18 +54,15 @@ export const useForm = (initialForm, validateForm) => {
               `Purchase code #${result.id}`,
               "success"
             ),
-          
-          
+
           setTimeout(() => {
             EmptyCart();
-          
           }, 3000)
         )
         .catch((error) => console.log(error))
         .finally(() => {
-          setForm([]);       
+          setForm([]);
         });
-
     } else {
       return;
     }

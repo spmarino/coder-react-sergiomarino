@@ -9,7 +9,11 @@ function CartWidget() {
     <Link to="/cart" style={{ display: "flex", fontSize: " 1.5em" }}>
       <FaCartPlus color="#fff" />
 
-      {CartList.length< 1 ?" ":<p style={{ color: "white" , padding: "0 10px" }}>{IconCart()} </p>}
+      {CartList.length < 1 ? (
+        " "
+      ) : (
+        <p style={{ color: "white", padding: "0 10px" }}>{IconCart()} </p>
+      )}
     </Link>
   );
 }

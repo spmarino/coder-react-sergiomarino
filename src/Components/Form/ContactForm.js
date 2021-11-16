@@ -1,6 +1,6 @@
 import { useForm } from "../Hooks/useForm";
 import Loader from "react-loader-spinner";
-import {Form, Input, Button, Err, Title} from "./CFStyle.jsx"
+import { Form, Input, Button, Err, Title } from "./CFStyle.jsx";
 
 const initialForm = { name: "", email: "", phone: "", email2: "" };
 const validationsForm = (form) => {
@@ -25,8 +25,7 @@ const validationsForm = (form) => {
 
   if (!form.email2.trim()) {
     errors.email2 = "You must enter an email address";
-  }
-  else if (form.email !== form.email2) {
+  } else if (form.email !== form.email2) {
     errors.email2 = "The emails must match";
   } else if (!regexEmail.test(form.email2.trim())) {
     errors.email2 = "It must be a valid email";
@@ -42,14 +41,8 @@ const validationsForm = (form) => {
 };
 
 const ContactForm = () => {
-  const {
-    form,
-    errors,
-    loading,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useForm(initialForm, validationsForm);
+  const { form, errors, loading, handleChange, handleBlur, handleSubmit } =
+    useForm(initialForm, validationsForm);
 
   return (
     <div>
@@ -75,7 +68,7 @@ const ContactForm = () => {
           value={form.email}
           required
         />
-        {errors.email&& <Err>{errors.email}</Err>}
+        {errors.email && <Err>{errors.email}</Err>}
 
         <Input
           type="email"
@@ -100,16 +93,15 @@ const ContactForm = () => {
         {errors.phone && <Err>{errors.phone}</Err>}
         <Button type="submit" value="Enviar" />
       </Form>
-      {loading && <Loader
-        type="Circles"
-        color="#256ce1"
-        height={80}
-        width={80}
-        timeout={3000}
-      
-        />}
-     
-       
+      {loading && (
+        <Loader
+          type="Circles"
+          color="#256ce1"
+          height={80}
+          width={80}
+          timeout={3000}
+        />
+      )}
     </div>
   );
 };
