@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Curso React JS: Proyecto Final
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## E-commerce project "Shop Rick and Morty"
 
-## Available Scripts
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5wlE7RxsYhCgvesbEcOzNGgF6nNDsbyxmggq-hc4AeSZnV_sBkgsCcC_2SQal3ysWBrY&usqp=CAU)
 
-In the project directory, you can run:
+Click para ver la Demo!
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://shop-rickandmorty.netlify.app/)
 
-### `npm start`
+Objetivo: Desarrollar una app de un e-commerce para poder vender productos de un rubro a elección.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Debe contener una lista de productos alojados en una base de datos NoSql (Firebase).
+- Debe contener un "carrito" funcional para realizar compra de varios items.
+- Debe visualizarse el detalle de cada producto.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación
 
-### `npm run build`
+- Abra su editor de código preferido
+- Mediante una terminal clone el link del proyecto 
+```sh
+git clone https://github.com/spmarino/coder-react-sergiomarino.git
+```
+- Instale módulos y librerías del proyecto
+ ```sh
+npm install
+```
+- Inicie el proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Recursos
+- [Firebase](https://firebase.google.com/docs/reference/js) - Servicio utilizado para la creación de base NoSql.
+- [React Loader Spinner](https://www.npmjs.com/package/react-loader-spinner) - Loader decorativo para la espera de respuestas del servidor.
+- [React Icons](https://react-icons.github.io/react-icons/) - Iconos decorativos para la web.
+- [Styled Components](https://styled-components.com/) - Utilizado para manejar los estilos de las paginas y los componentes.
+- [SweetAlert 2](https://sweetalert2.github.io/) - Modal utilizado para notificar el éxito de la compra.
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom)- Paquete para manejar las rutas de la pagina.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [/](https://mystifying-hodgkin-9f1e33.netlify.app/)  Se puede ver la lista de productos.
+- [/Categories](https://mystifying-hodgkin-9f1e33.netlify.app/Categories) Filtra los productos por categoría.
+- [/Cart](https://mystifying-hodgkin-9f1e33.netlify.app/cart) Se pueden visualizar los productos en el carrito y finalizar la compra.
+- - [/Contact](https://mystifying-hodgkin-9f1e33.netlify.app/cart) Datos de contacto.

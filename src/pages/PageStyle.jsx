@@ -26,3 +26,24 @@ text-decoration: none;
         color: #98d40d;
     }
 `
+
+export const Img2 = styled.img `
+width: 150px;
+height: 150px;
+
+`
+
+export const Body = styled.p `
+width: 80%;
+`
+
+export const Ul = styled.ul `
+list-style: none;
+
+`
+
+export const A = styled.a `
+color:Black;
+text-decoration:none;
+margin-top:10px;
+`

@@ -9,6 +9,7 @@ import Categories from "./pages/Categories";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemCategory from "./Components/ItemCategory/ItemCategory";
 import Cart from "./Components/Cart/Cart";
+import Contact from "./pages/Contact"
 
 export const AppContext = createContext();
 
@@ -27,6 +28,8 @@ function App() {
           <Route path="/category/:id" exact component={ItemCategory} />
 
           <Route path="/cart" exact component={Cart} />
+
+          <Route path="/contact" exact component={Contact} />
         </Switch>
       </Router>
     </CartContextProvider>
