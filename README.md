@@ -46,4 +46,4 @@ npm start
 - [/](https://mystifying-hodgkin-9f1e33.netlify.app/)  Se puede ver la lista de productos.
 - [/Categories](https://mystifying-hodgkin-9f1e33.netlify.app/Categories) Filtra los productos por categoría.
 - [/Cart](https://mystifying-hodgkin-9f1e33.netlify.app/cart) Se pueden visualizar los productos en el carrito y finalizar la compra.
-- - [/Contact](https://mystifying-hodgkin-9f1e33.netlify.app/cart) Datos de contacto.
+- [/Contact](https://mystifying-hodgkin-9f1e33.netlify.app/cart) Datos de contacto.
